@@ -1,2 +1,4 @@
 node_modules
-
+report_files
+report_html
+.DS_Store
