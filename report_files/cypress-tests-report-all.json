@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-08-20T15:22:09.229Z",
+    "end": "2022-08-20T15:23:35.465Z",
+    "duration": 59598,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bf60231a-0ae1-49cd-87d8-3dbca50d3796",
+      "title": "",
+      "fullFile": "cypress/integration/demo-test.spec.ts",
+      "file": "cypress/integration/demo-test.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "38936112-785f-48b2-a207-90191992dcbf",
+          "title": "Securrency DApp Demo Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Header: Connected State",
+              "fullTitle": "Securrency DApp Demo Tests Verify Header: Connected State",
+              "timedOut": null,
+              "duration": 14159,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Verify Header is visible\nhomePage.getHeader().should('be.visible');\n// Verify Home Button is visible and has a link\nhomePage.getHomeButton().should('be.visible');\nhomePage.getHomeButton().should('have.attr', testData_1.attributes.href);\n// Verify Home Button Image is visible and has src attribute\nhomePage.getHomeButtonImage().should('be.visible');\nhomePage.getHomeButtonImage().should('have.attr', testData_1.attributes.src);\n// Verify \"add citizen\" button is vsisible, enabled and has correct text\nhomePage.getAddCitizenButton().should('be.visible');\nhomePage.getAddCitizenButton().should('be.enabled');\nhomePage.getAddCitizenButton().should('have.text', testData_1.expectedTexts.addCitizenButtonText);\n// Verify wallet address is input is displayed and is read only\nhomePage.getWalletAddressField().should('be.visible');\nhomePage.getWalletAddressField().should('have.attr', testData_1.attributes.readonly);",
+              "err": {},
+              "uuid": "34f76893-110a-41a8-867e-3660251e0cb2",
+              "parentUUID": "38936112-785f-48b2-a207-90191992dcbf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify \"Citizens List\" Table Default Layout",
+              "fullTitle": "Securrency DApp Demo Tests Verify \"Citizens List\" Table Default Layout",
+              "timedOut": null,
+              "duration": 882,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Verify \"Citizens List\" table header text is displayed and has correct text\nhomePage.getCitizensListText().should('be.visible');\nhomePage.getCitizensListText().should('have.text', testData_1.expectedTexts.citizensListText);\n// Verify \"total records : {number}\" table header text is displayed\nhomePage.getTableResultsText().should('be.visible');\nhomePage.getTableResultsText().should('contain.text', testData_1.expectedTexts.totalRecordsText);\n// Verify Table Column Titles are correctly displayed\nhomePage.getTableHeaderColumnValue1().should('have.text', testData_1.expectedTexts.tableHeaderColumnText1);\nhomePage.getTableHeaderColumnValue2().should('have.text', testData_1.expectedTexts.tableHeaderColumnText2);\nhomePage.getTableHeaderColumnValue3().should('have.text', testData_1.expectedTexts.tableHeaderColumnText3);\nhomePage.getTableHeaderColumnValue4().should('have.text', testData_1.expectedTexts.tableHeaderColumnText4);\n// Verify \"Citizens List\" Table is visible\nhomePage.getCitizensTable().should('be.visible');\n// Verify \"Citizens List\" table has 5 items loaded on one page\nhomePage.getCitizensTableBody().find('.css-0').its('length').should('eq', 5);\n// Verify \"Citizens List\" table pagination default state \nhomePage.getPaginationBar().should('be.visible');\nhomePage.getFirstPaginationButton().should('have.text', 1);\nhomePage.getFirstPaginationButton().should('have.class', 'css-1nb9743');\nhomePage.getSecondPaginationButton().should('have.text', 2);\nhomePage.getSecondPaginationButton().should('have.class', 'css-n1k2ji');\nhomePage.getThirdPaginationButton().should('have.text', 3);\nhomePage.getThirdPaginationButton().should('have.class', 'css-n1k2ji');\nhomePage.getNextPaginationButton().should('be.visible');\nhomePage.getSkipToLastPaginationButton().should('be.visible');",
+              "err": {},
+              "uuid": "ba94ddbe-a63a-4397-9c08-6428e081fb0f",
+              "parentUUID": "38936112-785f-48b2-a207-90191992dcbf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Add Citizen Functionality",
+              "fullTitle": "Securrency DApp Demo Tests Verify Add Citizen Functionality",
+              "timedOut": null,
+              "duration": 44557,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Go to Add Citizen Page\nhomePage.getAddCitizenButton().click();\ncy.url().should('contain', 'add-citizen');\n// Input all the required data, click \"Add Citizen\" button\naddCitizenPage.nameInputFieldType(testData_1.inputTexts.name);\naddCitizenPage.ageInputFieldType(testData_1.inputTexts.age);\naddCitizenPage.cityInputFieldType(testData_1.inputTexts.city);\naddCitizenPage.noteInputFieldType(testData_1.inputTexts.note);\naddCitizenPage.clickAddCitizenButton();\n// Confirm Metamask Transaction\ncy.confirmMetamaskTransaction();\n// Wait for loading to finish, verify the success pop-up appears\naddCitizenPage.getLoadingStateButton().should('not.exist');\naddCitizenPage.getAddCitizenSuccessPopUp().should('be.visible');\n// Confirm data is correctly published\naddCitizenSuccessPage.getName().should('have.text', testData_1.inputTexts.name);\naddCitizenSuccessPage.getAge().should('have.text', testData_1.inputTexts.age);\naddCitizenSuccessPage.getNote().should('have.text', testData_1.inputTexts.note);",
+              "err": {},
+              "uuid": "ec3d5e84-0f64-435a-8091-9d33e1d2a51c",
+              "parentUUID": "38936112-785f-48b2-a207-90191992dcbf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "34f76893-110a-41a8-867e-3660251e0cb2",
+            "ba94ddbe-a63a-4397-9c08-6428e081fb0f",
+            "ec3d5e84-0f64-435a-8091-9d33e1d2a51c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 59598,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report_files",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
