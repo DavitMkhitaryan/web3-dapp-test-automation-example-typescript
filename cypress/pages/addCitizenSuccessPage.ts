@@ -1,6 +1,6 @@
 import { addCitizenSuccessPageLocators } from "../support/locators";
 
-export class AddCitizenSuccessPage {
+class AddCitizenSuccessPage {
 
     getName() {
         return cy.get(addCitizenSuccessPageLocators.name);
@@ -15,3 +15,4 @@ export class AddCitizenSuccessPage {
     }
 }
 
+export { AddCitizenSuccessPage };

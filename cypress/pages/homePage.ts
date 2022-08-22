@@ -1,6 +1,6 @@
 import { homePageLocators } from "../support/locators";
 
-export class HomePage {
+class HomePage {
 
     getHeader() {
         return cy.get(homePageLocators.headerLocator);
@@ -77,6 +77,6 @@ export class HomePage {
     getSkipToLastPaginationButton() {
         return cy.get(homePageLocators.skipToLastPaginationButtonLocator);
     }
-    
-
 }
+
+export {HomePage};

@@ -14,21 +14,25 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
-import './commands';
-import 'cypress-metamask';
+import "./commands";
+import "cypress-metamask";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 declare global {
-    namespace Cypress {
-      interface Chainable {
-        /**
-         * Custom command to select DOM element by data-cy attribute.
-         * @example cy.dataCy('greeting')
-         */
-        setupMetamask(secretWords: string, network: string, password: string): Chainable<Element>;
-        acceptMetamaskAccess(): Chainable<Element>;
-        getMetamaskWalletAddress(): Chainable<String>;
-        confirmMetamaskTransaction(): Chainable<Element>;
-      }
+  namespace Cypress {
+    interface Chainable {
+      /**
+       * Custom command to select DOM element by data-cy attribute.
+       * @example cy.dataCy('greeting')
+       */
+      setupMetamask(
+        secretWords: string,
+        network: string,
+        password: string
+      ): Chainable<Element>;
+      acceptMetamaskAccess(): Chainable<Element>;
+      getMetamaskWalletAddress(): Chainable<String>;
+      confirmMetamaskTransaction(): Chainable<Element>;
     }
   }
+}
